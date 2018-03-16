@@ -29,11 +29,11 @@ class CognitiveBing
     web_search_url = ""
 
     if type == "videos"
-      web_search_url = "https://api.cognitive.microsoft.com/bing/v5.0/videos/search"
+      web_search_url = "https://api.cognitive.microsoft.com/bing/v7.0/videos/search"
     elsif type == "image"
-      web_search_url = "https://api.cognitive.microsoft.com/bing/v5.0/images/search"
+      web_search_url = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
     else
-      web_search_url = "https://api.cognitive.microsoft.com/bing/v5.0/search"
+      web_search_url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
     end
 
     full_address = web_search_url + query_string + query_portion + params
@@ -64,7 +64,7 @@ class CognitiveBing
     query_portion = URI.encode_www_form_component(search_term)
 
 
-    web_search_url = "https://api.cognitive.microsoft.com/bing/v5.0/suggestions"
+    web_search_url = "https://api.cognitive.microsoft.com/bing/v7.0/suggestions"
 
     full_address = web_search_url + query_string + query_portion
 
@@ -106,7 +106,7 @@ class CognitiveBingNews
 
     end
 
-    web_search_url = "https://api.cognitive.microsoft.com/bing/v5.0/news/search"
+    web_search_url = "https://api.cognitive.microsoft.com/bing/v7.0/news/search"
 
 
     full_address = web_search_url + query_string + query_portion + paramsbuilder
@@ -130,7 +130,7 @@ class CognitiveBingNews
 
   def category(category_term, params = {})
 
-    web_search_url = URI('https://api.cognitive.microsoft.com/bing/v5.0/news/')
+    web_search_url = URI('https://api.cognitive.microsoft.com/bing/v7.0/news/')
     web_search_url.query = URI.encode_www_form({
       # Request parameters
       'category' => category_term.to_s
@@ -155,7 +155,7 @@ class CognitiveBingNews
 
   def trending
 
-    web_search_url = "https://api.cognitive.microsoft.com/bing/v5.0/news/trendingtopics"
+    web_search_url = "https://api.cognitive.microsoft.com/bing/v7.0/news/trendingtopics"
 
 
     uri = URI(web_search_url)
